@@ -1,0 +1,63 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by name"
+        [(ngModel)]="name"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchName()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Foods List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let food of foods; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveFood(food, i)"
+      >
+        {{ food.name }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFoods()">
+      Remove All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentFood">
+      <h4>Food</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentFood.name }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentFood.description }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentFood.added ? "Added" : "Pending" }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/foods/{{ currentFood.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentFood">
+      <br />
+      <p>Please click on a Food....</p>
+    </div>
+  </div>
+</div>

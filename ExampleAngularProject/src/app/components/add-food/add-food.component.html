@@ -1,0 +1,36 @@
+<div >
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name" style="height: 20px">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="food.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="textarea"
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="food.description"
+          name="description"
+        />
+      </div>
+
+      <button (click)="saveFood()" class="btn btn-success">Create</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newFood()">Add</button>
+    </div>
+  </div>
+</div>
