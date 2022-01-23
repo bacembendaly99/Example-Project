@@ -23,11 +23,10 @@ import com.example.example.repository.FoodRepository;
 
 
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/example")
 public class FoodController {
-
     @Autowired
     FoodRepository foodRepository;
 
