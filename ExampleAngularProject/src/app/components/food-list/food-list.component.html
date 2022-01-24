@@ -31,7 +31,7 @@
       </li>
     </ul>
 
-    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFoods()">
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFoods()" *ngIf="Admin">
       Remove All
     </button>
   </div>
@@ -50,7 +50,7 @@
         {{ currentFood.added ? "Added" : "Pending" }}
       </div>
 
-      <a class="badge badge-warning" routerLink="/foods/{{ currentFood.id }}">
+      <a  routerLink="/food/{{ currentFood.id }}">
         Edit
       </a>
     </div>

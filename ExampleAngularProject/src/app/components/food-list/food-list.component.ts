@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FoodService} from "../../services/food.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-foods-list',
@@ -12,8 +13,14 @@ export class FoodListComponent implements OnInit {
   currentFood : any;
   currentIndex = -1;
   name = '';
+  Admin = false;
 
-  constructor(private foodService: FoodService) { }
+
+  constructor(private foodService: FoodService,private authService: AuthService) {
+    if (this.authService.role=="ROLE_ADMIN"){this.Admin=true}
+    console.log(this.authService.role)
+
+  }
 
   ngOnInit(): void {
     this.retrieveFoods();

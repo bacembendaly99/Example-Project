@@ -9,6 +9,7 @@ import {delay} from "rxjs/operators";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  Role = localStorage.getItem('ROLE');
   title = 'ExampleAngularProject';
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;

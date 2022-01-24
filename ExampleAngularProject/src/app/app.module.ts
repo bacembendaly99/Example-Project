@@ -15,6 +15,9 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {MatIconModule} from "@angular/material/icon";
     AddFoodComponent,
     FoodListComponent,
     FoodCartComponent,
-    FoodDetailsComponent
+    FoodDetailsComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,8 @@ import {MatIconModule} from "@angular/material/icon";
     MatIconModule,
     MatDividerModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
