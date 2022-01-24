@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="col-md-6">
-    <h4>Foods List</h4>
+    <h4>Food List</h4>
     <ul class="list-group">
       <li
         class="list-group-item"
@@ -38,26 +38,26 @@
   <div class="col-md-6">
     <div *ngIf="currentFood">
       <h4>Food</h4>
-      <div>
+      <div class="detail">
         <label><strong>Name:</strong></label> {{ currentFood.name }}
       </div>
-      <div>
+      <div class="detail">
         <label><strong>Description:</strong></label>
         {{ currentFood.description }}
       </div>
-      <div>
+      <div class="detail">
         <label><strong>Status:</strong></label>
         {{ currentFood.added ? "Added" : "Pending" }}
       </div>
 
-      <a  routerLink="/food/{{ currentFood.id }}">
+      <a style="font-size: 50%" routerLink="/food/{{ currentFood.id }}">
         Edit
       </a>
     </div>
 
     <div *ngIf="!currentFood">
       <br />
-      <p>Please click on a Food....</p>
+      <p>Please choose an item..</p>
     </div>
   </div>
 </div>

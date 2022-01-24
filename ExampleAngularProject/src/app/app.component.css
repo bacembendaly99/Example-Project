@@ -72,3 +72,7 @@ mat-divider {
 }
 
 
+.logout {
+  font-size: 150%;
+  color: crimson;
+}

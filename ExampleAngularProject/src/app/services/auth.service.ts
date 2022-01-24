@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -7,17 +7,19 @@ const AuthUrl = 'http://localhost:8443/auth/';
 
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   isLogin = false;
 
-  role : string | undefined;
+  role: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   login(username: string, password: string): Observable<any> {
 
@@ -27,6 +29,7 @@ export class AuthService {
     });
 
   }
+
   logout() {
     this.isLogin = false;
     this.role = '';

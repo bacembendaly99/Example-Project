@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from 'src/app/services/auth.service';
 import {take} from "rxjs/operators";
 import {Router} from "@angular/router";
 
@@ -12,14 +12,16 @@ export class LoginPageComponent implements OnInit {
   public loginValid = true;
   public username = '';
   public password = '';
-  public test='';
+  public test = '';
 
-  constructor(private authservice : AuthService , private router: Router) { }
+  constructor(private authservice: AuthService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }
+
   onSubmit(): void {
-    this.authservice.login(this.username,this.password).pipe(
+    this.authservice.login(this.username, this.password).pipe(
       take(1)
     ).subscribe({
       next: (user) => {
@@ -35,10 +37,10 @@ export class LoginPageComponent implements OnInit {
       },
       error: _ => this.loginValid = false
     });
-}
+  }
 }
 
 function delay(ms: number) {
-  return new Promise( resolve => setTimeout(resolve, ms) );
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 

@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 const baseUrl = 'http://localhost:8443/example/food';
+
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getAll(): Observable<any> {
     return this.http.get(baseUrl);

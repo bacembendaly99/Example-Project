@@ -1,0 +1,17 @@
+h4 {
+  font-size: 70%;
+  font-weight: bold;
+  margin-top: 5%;
+}
+.list-group-item {
+  font-size: 50%;
+}
+
+p {
+  font-size: 50%;
+  color: darkgreen;
+  font-weight: bold;
+}
+.detail {
+  font-size: 50%;
+}

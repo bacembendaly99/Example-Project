@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FoodService} from "../../services/food.service";
 import {AuthService} from "../../services/auth.service";
 
@@ -10,14 +10,16 @@ import {AuthService} from "../../services/auth.service";
 export class FoodListComponent implements OnInit {
 
   foods: any;
-  currentFood : any;
+  currentFood: any;
   currentIndex = -1;
   name = '';
   admin = false;
 
 
-  constructor(private foodService: FoodService,private authService: AuthService) {
-    if (localStorage.getItem('ROLE')=="ROLE_ADMIN"){this.admin=true}
+  constructor(private foodService: FoodService, private authService: AuthService) {
+    if (localStorage.getItem('ROLE') == "ROLE_ADMIN") {
+      this.admin = true
+    }
     console.log(this.authService.role)
 
   }
@@ -29,11 +31,11 @@ export class FoodListComponent implements OnInit {
   retrieveFoods(): void {
     this.foodService.getAll()
       .subscribe(
-          (data: any) => {
+        (data: any) => {
           this.foods = data;
           console.log(data);
         },
-          (error: any) => {
+        (error: any) => {
           console.log(error);
         });
   }
@@ -52,11 +54,11 @@ export class FoodListComponent implements OnInit {
   removeAllFoods(): void {
     this.foodService.deleteAll()
       .subscribe(
-          (response: any) => {
+        (response: any) => {
           console.log(response);
           this.retrieveFoods();
         },
-          (error: any) => {
+        (error: any) => {
           console.log(error);
         });
   }
@@ -64,11 +66,11 @@ export class FoodListComponent implements OnInit {
   searchName(): void {
     this.foodService.findByName(this.name)
       .subscribe(
-          (data: any) => {
+        (data: any) => {
           this.foods = data;
           console.log(data);
         },
-          (error: any) => {
+        (error: any) => {
           console.log(error);
         });
   }

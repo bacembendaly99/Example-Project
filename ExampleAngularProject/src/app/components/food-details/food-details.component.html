@@ -3,7 +3,7 @@
     <h4>Food</h4>
     <form>
       <div class="form-group">
-        <label for="name">Title</label>
+        <label id="title" for="name">Title</label>
         <input
           type="text"
           class="form-control"
@@ -13,7 +13,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label id="descr" for="description">Description</label>
         <input
           type="text"
           class="form-control"
@@ -24,13 +24,13 @@
       </div>
 
       <div class="form-group">
-        <label><strong>Status:</strong></label>
-        {{ currentFood.added ? "Added" : "Pending" }}
+        <label id="status">Status:</label>
+        <span id="pending">  {{ currentFood.added ? "Added" : "Pending" }}</span>
       </div>
     </form>
 
     <button
-      class="badge badge-primary mr-2"
+      class="badge badge-primary mr-2 bouton"
 
       *ngIf="currentFood.added"
       (click)="updateAdded(false)"
@@ -39,19 +39,19 @@
     </button>
     <button
       *ngIf="!currentFood.added"
-      class="badge badge-primary mr-2"
+      class="badge badge-primary mr-2 bouton"
       (click)="updateAdded(true)"
     >
       Add
     </button>
 
-    <button class="badge badge-danger mr-2" (click)="deleteFood()" *ngIf="admin">
+    <button class="badge badge-danger mr-2 bouton" (click)="deleteFood()" *ngIf="admin">
       Delete
     </button>
 
     <button
       type="submit"
-      class="badge badge-success"
+      class="badge badge-success bouton"
       (click)="updateFood()"
     >
       Update

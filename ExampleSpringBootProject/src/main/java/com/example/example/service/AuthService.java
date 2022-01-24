@@ -8,10 +8,11 @@ import java.util.Objects;
 
 @Service
 public class AuthService {
-
-    @Autowired
     private UserService userService;
 
+    public AuthService(UserService userService) {
+        this.userService = userService;
+    }
 
     public User login(String username, String password) {
         User user = this.userService.findByUsername(username);

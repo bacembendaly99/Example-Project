@@ -9,17 +9,25 @@ import {UserRole} from "./shared/user-role.interface";
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'food-list', pathMatch: 'full' },
-  { path: 'food-list', component: FoodListComponent, canActivate: [AuthGuard], data: {
-    role: [UserRole.ROLE_USER, UserRole.ROLE_ADMIN]
-    } },
-  { path: 'food/:id', component: FoodDetailsComponent, canActivate: [AuthGuard], data: {role: [UserRole.ROLE_ADMIN, UserRole.ROLE_USER]} },
-  { path: 'add', component: AddFoodComponent, canActivate: [AuthGuard], data: {role: [UserRole.ROLE_ADMIN]} },
-  { path: 'login', component: LoginPageComponent }
+  {path: '', redirectTo: 'food-list', pathMatch: 'full'},
+  {
+    path: 'food-list', component: FoodListComponent, canActivate: [AuthGuard], data: {
+      role: [UserRole.ROLE_USER, UserRole.ROLE_ADMIN]
+    }
+  },
+  {
+    path: 'food/:id',
+    component: FoodDetailsComponent,
+    canActivate: [AuthGuard],
+    data: {role: [UserRole.ROLE_ADMIN, UserRole.ROLE_USER]}
+  },
+  {path: 'add', component: AddFoodComponent, canActivate: [AuthGuard], data: {role: [UserRole.ROLE_ADMIN]}},
+  {path: 'login', component: LoginPageComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

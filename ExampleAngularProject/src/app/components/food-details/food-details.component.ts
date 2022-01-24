@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FoodService} from "../../services/food.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Food} from "../../shared/food.interface";
@@ -18,8 +18,10 @@ export class FoodDetailsComponent implements OnInit {
   constructor(
     private foodService: FoodService,
     private route: ActivatedRoute,
-    private router: Router,private authService: AuthService) {
-    if (localStorage.getItem('ROLE')=="ROLE_ADMIN"){this.admin=true}
+    private router: Router, private authService: AuthService) {
+    if (localStorage.getItem('ROLE') == "ROLE_ADMIN") {
+      this.admin = true
+    }
     console.log(this.authService.role)
   }
 
@@ -28,7 +30,7 @@ export class FoodDetailsComponent implements OnInit {
     this.getFood(this.route.snapshot.paramMap.get('id'));
   }
 
-  getFood(id : any): void {
+  getFood(id: any): void {
     this.foodService.get(id)
       .subscribe(
         data => {
@@ -41,7 +43,7 @@ export class FoodDetailsComponent implements OnInit {
 
   }
 
-  updateAdded(status : any): void {
+  updateAdded(status: any): void {
     const data = {
       name: this.currentFood.name,
       description: this.currentFood.description,
@@ -57,8 +59,6 @@ export class FoodDetailsComponent implements OnInit {
         error => {
           console.log(error);
         });
-
-
   }
 
   updateFood(): void {
