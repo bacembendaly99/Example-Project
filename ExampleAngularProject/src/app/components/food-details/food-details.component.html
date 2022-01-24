@@ -31,6 +31,7 @@
 
     <button
       class="badge badge-primary mr-2"
+
       *ngIf="currentFood.added"
       (click)="updateAdded(false)"
     >
@@ -44,7 +45,7 @@
       Add
     </button>
 
-    <button class="badge badge-danger mr-2" (click)="deleteFood()">
+    <button class="badge badge-danger mr-2" (click)="deleteFood()" *ngIf="admin">
       Delete
     </button>
 

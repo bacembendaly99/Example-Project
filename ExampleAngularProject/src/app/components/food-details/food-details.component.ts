@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FoodService} from "../../services/food.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Food} from "../../shared/food.interface";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-food-details',
@@ -12,11 +13,14 @@ export class FoodDetailsComponent implements OnInit {
 
   currentFood: Food | any;
   message = '';
+  admin = false;
 
   constructor(
     private foodService: FoodService,
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router,private authService: AuthService) {
+    if (localStorage.getItem('ROLE')=="ROLE_ADMIN"){this.admin=true}
+    console.log(this.authService.role)
   }
 
   ngOnInit(): void {

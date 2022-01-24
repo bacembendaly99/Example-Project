@@ -27,6 +27,12 @@ export class AuthService {
     });
 
   }
+  logout() {
+    this.isLogin = false;
+    this.role = '';
+    localStorage.setItem('STATE', 'false');
+    localStorage.setItem('ROLE', '');
+  }
 
   getRole() {
     return localStorage.getItem('ROLE')

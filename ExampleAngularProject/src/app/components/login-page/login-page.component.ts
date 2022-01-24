@@ -28,8 +28,8 @@ export class LoginPageComponent implements OnInit {
         localStorage.setItem('ROLE', user.role);
         console.log(localStorage.getItem('STATE'));
         console.log(localStorage.getItem('ROLE'));
-        this.authservice.isLogin=true;
-        this.authservice.role=user.role;
+        this.authservice.role = user.role;
+        this.authservice.isLogin = true;
         this.router.navigate(['/food-list'])
 
       },
@@ -38,5 +38,7 @@ export class LoginPageComponent implements OnInit {
 }
 }
 
-
+function delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms) );
+}
 

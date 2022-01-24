@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddFoodComponent } from './components/add-food/add-food.component';
 import { FoodListComponent } from './components/food-list/food-list.component';
-import { FoodCartComponent } from './components/food-cart/food-cart.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FoodDetailsComponent } from './components/food-details/food-details.component';
@@ -24,9 +23,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     AppComponent,
     AddFoodComponent,
     FoodListComponent,
-    FoodCartComponent,
     FoodDetailsComponent,
-    LoginPageComponent
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,

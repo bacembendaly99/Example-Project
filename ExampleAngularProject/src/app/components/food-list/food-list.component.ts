@@ -13,11 +13,11 @@ export class FoodListComponent implements OnInit {
   currentFood : any;
   currentIndex = -1;
   name = '';
-  Admin = false;
+  admin = false;
 
 
   constructor(private foodService: FoodService,private authService: AuthService) {
-    if (this.authService.role=="ROLE_ADMIN"){this.Admin=true}
+    if (localStorage.getItem('ROLE')=="ROLE_ADMIN"){this.admin=true}
     console.log(this.authService.role)
 
   }
