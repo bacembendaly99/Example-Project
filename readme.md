@@ -34,7 +34,6 @@ Install the dependencies and start the Angular JS server.
 npm install
 ng serve
 ```
-The datab
 
 
 # Happy learning 💚
