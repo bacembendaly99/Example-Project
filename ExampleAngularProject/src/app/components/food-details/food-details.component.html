@@ -1,0 +1,66 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentFood" class="edit-form">
+    <h4>Food</h4>
+    <form>
+      <div class="form-group">
+        <label id="title" for="name">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentFood.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label id="descr" for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentFood.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label id="status">Status:</label>
+        <span id="pending">  {{ currentFood.added ? "Added" : "Pending" }}</span>
+      </div>
+    </form>
+
+    <button
+      class="badge badge-primary mr-2 bouton"
+
+      *ngIf="currentFood.added"
+      (click)="updateAdded(false)"
+    >
+      UnAdd
+    </button>
+    <button
+      *ngIf="!currentFood.added"
+      class="badge badge-primary mr-2 bouton"
+      (click)="updateAdded(true)"
+    >
+      Add
+    </button>
+
+    <button class="badge badge-danger mr-2 bouton" (click)="deleteFood()" *ngIf="admin">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success bouton"
+      (click)="updateFood()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentFood">
+    <br />
+    <p>Cannot access this Food...</p>
+  </div>
+</div>

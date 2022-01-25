@@ -1,0 +1,49 @@
+
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  Example Application
+
+</mat-toolbar>
+
+<mat-sidenav-container >
+  <mat-sidenav  #sidenav="matSidenav" class="mat-elevation-z8">
+
+    <img class="avatar mat-elevation-z8" src="assets/images/Logo.png" />
+
+
+    <h3 class="title">Features | {{role}}</h3>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="food-list">
+      <mat-icon>list</mat-icon>
+      <span> Food List</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="add" *ngIf="admin">
+      <mat-icon>add</mat-icon>
+      <span> Add food</span>
+    </button>
+
+
+
+    <mat-divider></mat-divider>
+
+
+    <button *ngIf="login" class="badge badge-danger mr-2 logout" (click)="logout()">
+      Log out
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
