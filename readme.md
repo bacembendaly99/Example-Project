@@ -1,11 +1,11 @@
 # Example Code ( Angular | Spring Boot )
-## This code is for a job interview ✔🟢
+
 
 
 
 This application is destined to manifest the main basics of Spring Boot Framework alongside an Angular Front-end.
 
-- Clone the project
+- Clone the repository
 - Run The two projects 
 - ✨Magic ✨
 

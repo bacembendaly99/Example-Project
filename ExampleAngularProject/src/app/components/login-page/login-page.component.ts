@@ -34,6 +34,7 @@ export class LoginPageComponent implements OnInit {
         this.authservice.isLogin = true;
         this.router.navigate(['/food-list'])
 
+
       },
       error: _ => this.loginValid = false
     });
