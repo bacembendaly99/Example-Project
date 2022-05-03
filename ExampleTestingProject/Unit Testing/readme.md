@@ -1,1 +1,0 @@
-Unit testing is the process of testing small, isolated pieces of code. Also known as isolated testing, unit tests do not use external resources, such as the network or a database
